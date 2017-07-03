@@ -11,3 +11,11 @@
     update=no
   sudo: yes
   sudo_user: www-data
+  register: cloned
+
+- name: composer create-project
+  composer: command=create-project working_dir=/var/www/laravel optimize_autoloader=no
+  sudo: yes
+  sudo_user: www-data
+  when: cloned|changed
+

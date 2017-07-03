@@ -1,2 +1,23 @@
 ---
 # tasks file for mysql
+
+- name: Install database and needed software
+  apt: name={{ item }} state=present
+  sudo: yes
+  with_items:
+#python package required
+    - python-mysqldb
+    - mysql-server
+    - mysql-client
+    - php7.0-mysql
+
+
+- name: Create mysql database
+  mysql_db: name={{ mysql_db }} state=present
+
+- name: Create mysql user
+  mysql_user: 
+    name={{ mysql_user }} 
+    password={{ mysql_password }} 
+    priv=*.*:ALL
+

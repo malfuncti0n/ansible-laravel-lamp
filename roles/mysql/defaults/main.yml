@@ -1,2 +1,5 @@
 ---
 # defaults file for mysql
+mysql_db: symfony
+mysql_user: symfony
+mysql_password: password

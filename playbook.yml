@@ -1,0 +1,7 @@
+- hosts: lamp
+
+  roles:
+    - apache
+    - php
+    - mysql
+    - symfony

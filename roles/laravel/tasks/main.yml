@@ -1,2 +1,13 @@
 ---
 # tasks file for laravel
+
+- name: ensure /var/www/ directory exist
+  file: dest=/var/www/ state=directory owner=www-data group=www-data mode=0700
+
+- name: Clone laravel repository
+  git: >
+    dest=/var/www/laravel
+    repo=https://github.com/laravel/laravel.git
+    update=no
+  sudo: yes
+  sudo_user: www-data

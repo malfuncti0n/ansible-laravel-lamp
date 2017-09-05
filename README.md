@@ -1,2 +1,2 @@
 # ansible-symfony-lamp
-Install Lamp and symfony with Ansible
+Install Lamp and Laravel with Ansible
